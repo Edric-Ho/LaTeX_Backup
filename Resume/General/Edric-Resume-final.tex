@@ -1,0 +1,96 @@
+% Document class and font size
+\documentclass[a4paper,9pt]{extarticle}
+
+% Packages
+\usepackage[utf8]{inputenc} % For input encoding
+\usepackage{geometry} % For page margins
+\geometry{a4paper, margin=0.75in} % Set paper size and margins
+\usepackage{titlesec} % For section title formatting
+\usepackage{enumitem} % For itemized list formatting
+\usepackage{hyperref} % For hyperlinks
+
+% Formatting
+\setlist{noitemsep} % Removes item separation
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}[\titlerule] % Section title format
+\titlespacing*{\section}{0pt}{\baselineskip}{\baselineskip} % Section title spacing
+
+% Begin document
+\begin{document}
+
+% Disable page numbers
+\pagestyle{empty}
+
+% Header
+\begin{center}
+\textbf{\Large Edric Nathaniel H.G. Ho}\\[2pt] % Name
+Toronto, ON | \href{mailto:example@example.com}{edric.he@mail.utoronto.ca} | (604) 346-9998 | \href{https://www.linkedin.com/in/johndoe}{https://github.com/Edric-He}% Contact info
+\end{center}
+
+% Education Section
+\section*{EDUCATION}
+\noindent
+\textbf{University of Toronto}\hfill Toronto, ON \\ % University name and location
+Major: Applied Math \& Computer Science (Intended)  \hfill Sep. 2023 - Present\\ % Degree and GPA
+Relevant Coursework: Mathematical Analysis, Abstract Algebra, Software Design, Statistical Reasoning and Data Science, Data Structures, Theory of Computation, Computer Organization, Systems Programming. % Additional info
+
+\section*{EXPERIENCE}
+\noindent
+\textbf{Research Assistant} \hfill Toronto, ON\\ % Company name and location
+\textit{Statistical Sciences Department at University of Toronto} \hfill Apr. 2024 - Aug. 2024 % Position and duration
+\begin{itemize}
+    \item Participated in a collaborative research project aimed at integrating ChatGPT into university Statistics coursework, focusing on its application for improving problem-solving and statistical communication.
+    \item Co-developed new curriculum content, including the creation of complex, multi-part statistical questions and tutorial materials that leverage AI technology to enhance learning outcomes.
+    \item Conducted comprehensive reviews and adaptations of existing statistical teaching materials to include AI tools, enhancing the practical application of statistical concepts.
+    \item Contributed to the analysis and manuscript preparation reporting on the efficacy and challenges of ChatGPT within an educational context, aimed for publication in a peer-reviewed journal.
+\end{itemize}
+
+\noindent
+\textbf{Research Paper Co-Editor} \hfill Toronto, ON\\ % Project or organization name and location
+\textit{Statistical Sciences Department at University of Toronto} \hfill Nov. 2023 - Feb. 2024  % Position and duration
+\begin{itemize}
+    \item Engaged in the editorial process of academic research papers, emphasizing statistical methodologies and economic implications in media representation studies.
+    \item Collaborated extensively with department faculty to refine research methodologies, enhance data interpretation, and ensure the rigorous academic quality of publications.
+    \item Applied sophisticated statistical tools including p-value assessment, chi-square tests, and logistic regression to critically evaluate research on cultural economics and identity-based consumer preferences.
+\end{itemize} 
+
+\noindent
+% Club or Organization Experience
+\textbf{Clinic Administrative Assistant} \hfill Vancouver, BC\\ % Club or organization name and location
+\textit{Matters of Health, Medical Clinic} \hfill Jan. 2021 - Jul. 2021 % Position and duration
+\begin{itemize}
+    \item Managed over 50 daily administrative tasks, including document editing and scheduling 15 daily appointments, significantly enhancing clinic operational flow and patient satisfaction.
+    \item Oversaw the accurate and confidential management of clinical databases containing over 1,000 patient records, while also explaining medical test results to approximately 20 clients daily, improving patient understanding and responsiveness to care.
+\end{itemize}
+
+% Projects Section
+\section*{PROJECTS}
+% Additional Project
+\noindent
+\textbf{UNICEF Sandbox Showcase} \hfill Toronto, ON\\ % Project name and location
+\textit{Project Link:} \url{https://github.com/Edric-He/STA130-UNICEF-SANDBOX-SHOWCASE} \hfill Dec. 2023 - Completed % Project link and duration
+\begin{itemize}
+    \item Co-developed a machine learning project that measures the accuracy of 4 Machine learning Algorithms predicted global conflict escalation for UNICEF, incorporating complex statistical analyses and multiple linear regression.
+    \item Our approach, recognized by Prof.Schwartz for its innovative handling of confounding variables, stood out for its advanced inference techniques and strategic contribution to humanitarian aid optimization.
+    \item Demonstrated exceptional skill in applying multidisciplinary knowledge from Psychology, Computer Science, Ethics, and Statistics to address real-world challenges.
+\end{itemize}
+\noindent
+\textbf{Research on Unsupervised Learning Algorithm} \hfill Vancouver, BC\\ % Project name and location
+\textit{Project Link:} \url{https://github.com/Edric-He/PARTITIONAL-HIERARCHICAL-CLUSTERING} \hfill Jul. 2021 - Completed % Project link and duration
+\begin{itemize}
+    \item Conducted a comparative study of partitional and hierarchical clustering techniques, specifically focusing on their application in classifying music data.
+    \item Utilized a comprehensive dataset from Kaggle to implement and analyze both K-means and agglomerative hierarchical clustering methods, assessing their effectiveness in statistical grouping based on song attributes.
+    \item Utilized advanced data preprocessing techniques, including PCA for dimension reduction and outlier detection methods (IQR, Local Outlier Factor), to enhance clustering robustness. Assessed algorithm performance using mean squared error and silhouette scores, highlighting practical applications and data handling limitations.
+\end{itemize}
+
+% Skills Section
+\section*{SKILLS}
+\begin{itemize}
+    \item \textbf{Programming Languages:} Python, Java, HTML5, CSS3, JavaScript, SASS % Programming skills
+    \item \textbf{Library/Frameworks:} SciPy, NumPy, Plotly, Matplotlib, Sklearn, JSON
+    \item \textbf{Software:} Pycharm, VSCode, IntelliJ, Webstorm, DataSpell, Git, Obsidian. % Software skills
+    
+    
+\end{itemize}
+
+% End document
+\end{document}
