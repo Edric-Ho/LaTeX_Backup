@@ -1,0 +1,168 @@
+\section*{Lecture 3: Modular Arithmetics (Sep. $10^{th}$)}
+
+
+\subsection*{Last lecture: $\mathbb{F}$}
+\qquad Recall \( \mathbb{F}_2 = \{0, 1\} \) with the following operations, and check if \( \mathbb{F}_2 \) is a field.:
+    \[\begin{aligned}
+        0 + 0 &= 0 \quad & 0 \cdot 0 &= 0 \\
+        0 + 1 &= 1 \quad & 0 \cdot 1 &= 0 \\
+        1 + 0 &= 1 \quad & 1 \cdot 0 &= 0 \\
+        1 + 1 &= 0 \quad & 1 \cdot 1 &= 1 
+    \end{aligned}\]
+
+
+% Modular Arithmetic
+\subsection*{\colorbox{yellow}{\#Modular Arithmetic.}}
+    \qquad Let \( m \in \mathbb{N} \) and let \( a, b \in \mathbb{Z} \). We say \( a \) is congruent to \( b \) modulo (or mod) \( m \)\, if \, \(m \mid a - b\), and we denote that:
+    \[\boldsymbol{a \equiv b \;\, \textbf{mod} \;\, m} \quad \text{or} \quad \boldsymbol{a \equiv b \, (m)}\]
+
+\vspace*{0.2cm}
+
+    \,\,\,\textbf{Example:} Let \( a = 3 \) and \( b = 45 \). Any of the following holds?:
+        \[\begin{aligned}
+            3 \equiv 45 \,\,(2) \quad \checkmark  \implies 2 \mid 3 - 45 \quad \checkmark\\ 
+            3 \equiv 45 \,\,(3) \quad \checkmark  \implies 3 \mid 3 - 45 \quad \checkmark\\
+            3 \equiv 45 \,\,(4) \quad \times \implies 4 \mid 3 - 45 \quad \times\\
+            3 \equiv 45 \,\,(5) \quad \times \implies 5 \mid 3 - 45 \quad \times
+        \end{aligned}\]
+        \qquad \qquad  Question: Are there numbers \( m > 5 \) such that \( a \equiv b \pmod{m} \)?\\
+        
+        \qquad \textbf{Exercise:} Write down two numbers that are congruent modulo 5 but not congruent modulo 3.\\
+        
+        \qquad \textbf{Homework:} Show that being congruent modulo \( m \) is an equivalence relation on \( \mathbb{Z} \).
+        
+        
+        %lemma
+        \subsubsection{\colorbox{pink}{Lemma:}} 
+        Let \( m \in \mathbb{N} \) and \( a, b \in \mathbb{Z} \), then \( a \equiv b \pmod{m} \iff \exists k \in \mathbb{Z} \text{ such that } a = b + mk.\) \newline
+            \begin{minipage}[t]{1\textwidth}
+                \vspace*{0.1cm}
+                \begin{proof} 
+                    \(\implies\)Suppose \( a \equiv b \pmod{m} \), then by definition, \( m \mid (a - b) \). This means that \( a - b \) is a multiple of \( m \), so it can be written as \( a - b = mk \) for some \( k \in \mathbb{Z} \). Rearranging, we get \( a = b + mk \), as claimed.
+                    \(\impliedby\)Conversely, suppose \( a = b + mk \). Then \( a - b = mk \), which is divisible by \( m \). By definition, \( a \equiv b \pmod{m} \).
+                \end{proof}
+            \end{minipage}
+            
+            
+        %Theorems
+        \subsubsection{\colorbox{red}{Theorem}}
+        Let \( m \in \mathbb{N},\, \forall a \in \mathbb{Z} \), there exists a \textbf{unique} \( r \in \{0, 1, \dots, m-1\} \) s.t. \( a \equiv r \pmod{m} \).\newline
+            \begin{minipage}[t]{1\textwidth}
+                \vspace*{0.1cm}
+                \begin{proof}
+                    We will show that there exist unique integers \( r, k \) such that \( a = r + km \) and \( 0 \leq r < m \). By the lemma, \( a \equiv r \pmod{m} \). \newline
+                    \newline
+                    \textbf{Existence:} Consider all integer multiples of \( m \), \( \{0, \pm m, \pm 2m, \dots \} \). These integers are equally spaced along the real line. The integer \( a \) lies somewhere on the real line in one of these intervals, i.e., it satisfies \( km \leq a < (k+1)m \) for some value of \( k \).
+                    If we subtract \( km \) from this inequality, we find \( 0 \leq a - km < m \). Let \( r = a - km \), then \( r \) satisfies the desired conditions.\newline
+                    \newline
+                    \textbf{Uniqueness:} Suppose that \( a = r + km = r' + k'm \) with \( 0 \leq r, r' < m \). Then \(r + km = r' + k'm\) \(\implies r - r' = (k' - k)m.\) \,It follows that \( r - r' \) is a multiple of \( m \). But since \( 0 \leq r, r' < m \), we must have \( -m < r - r' < m \). The only multiple of \( m \) in that interval is zero, so \( r = r' \) and \( k = k' \).
+                \end{proof}
+            \end{minipage}
+        
+\newpage
+        \subsubsection*{``Partitioning $\mathbb{Z}$ into  m  Congruence Classes" $\thicksim$ ``Congruence mod m"}
+            \qquad We will call $\boldsymbol{\{0,1,2,3,4,5,\ldots,m-1\}}$ the standard representatives for the integers modulo $m$.\\
+                \[\begin{aligned}
+                    &\text{Let } m = 3, \text{ we have the following standard representatives that partition } \mathbb{Z}: \\
+                    &\qquad \qquad  \overline{0} = \{ \ldots, -9, -6, -3, 0, 3, 6, 9, \ldots \} \\
+                    &\qquad \qquad \overline{1} = \{ \ldots, -10, -7, -4, 1, 4, 7, 10, \ldots \} \\
+                    &\qquad \qquad \overline{2} = \{ \ldots, -11, -8, -5, 2, 5, 8, 11, \ldots \}
+                \end{aligned}\]
+            \newline
+                We define addition and multiplication with integers modulo m.
+
+
+
+
+
+
+% Theorem: Field
+\subsection*{\colorbox{yellow}{Theorem.}}
+\( \mathbb{Z}/m\mathbb{Z} \) is a field if and only if \( m \) is a prime number.
+
+\textbf{Proof:} Suppose \( m \) is not a prime number. Then there exist \( r, s \in \mathbb{Z} \) such that \( 0 < r, s < m \) and \( r \cdot s = m \). This implies that \( r \cdot s \equiv 0 \pmod{m} \), but \( r \neq 0 \) and \( s \neq 0 \). Therefore, \( \mathbb{Z}/m\mathbb{Z} \) contains zero divisors and hence is not a field.
+
+Assume now that \( m \) is prime. We will use the following property of prime numbers: 
+\[
+\text{If } p \text{ is prime and } p \mid (x \cdot y), \text{ then either } p \mid x \text{ or } p \mid y.
+\]
+This property ensures that \( \mathbb{Z}/m\mathbb{Z} \) contains no zero divisors, and hence every non-zero element has a multiplicative inverse. Therefore, \( \mathbb{Z}/m\mathbb{Z} \) is a field. \(\square\)
+
+
+% Claim
+\subsection*{\colorbox{yellow}{Claim.}}
+Let \( x \in \mathbb{Z}/m\mathbb{Z} \) and \( m \) be prime. Then if \( x \neq 0 \), the function
+\[
+f_x: \mathbb{Z}/m\mathbb{Z} \to \mathbb{Z}/m\mathbb{Z}, \quad y \mapsto xy
+\]
+is injective.
+
+\textbf{Proof:} Let \( a, b \in \mathbb{Z}/m\mathbb{Z} \). Suppose \( a \equiv b \pmod{m} \), meaning \( m \mid (a - b) \). Fix a representative of \( x \) in \( \mathbb{Z} \), call it \( \tilde{x} \). Since \( x \neq 0 \), \( m \nmid \tilde{x} \).
+
+Because \( m \) is prime, \( m \nmid \tilde{x}(a - b) \) by the property of prime numbers. Therefore, \( \tilde{x}a \not\equiv \tilde{x}b \pmod{m} \), i.e., \( xa \not\equiv xb \). This proves the claim. \(\square\)
+
+% Surjectivity
+\textbf{Surjectivity:} By HW1, Q1(b), the function is also surjective. That is, \( \forall s \in \mathbb{Z}/m\mathbb{Z}, \exists y \) such that \( xy = s \). In particular, there exists \( y \) such that \( xy = 1 \).
+
+It follows that any element \( x \neq 0 \) has a multiplicative inverse. Therefore, if \( m \) is prime, \( \mathbb{Z}/m\mathbb{Z} \) is a field. \(\square\)
+
+% Notation
+\subsection*{\colorbox{yellow}{Notation.}}
+We will denote prime numbers by \( p \), and we will often denote \( \mathbb{Z}/p\mathbb{Z} \) as \( \mathbb{F}_p \), the field with \( p \) elements.
+
+% Modular Arithmetic Extended
+\subsection*{\colorbox{yellow}{Modular Arithmetic.}}
+
+\textbf{Definition:} The integers modulo \( m \), denoted \( \mathbb{Z}/m\mathbb{Z} \), is the set of congruence classes modulo \( m \). We will often denote the classes by their standard representatives, so we write:
+\[
+\mathbb{Z}/m\mathbb{Z} = \{0, 1, \dots, m-1\}.
+\]
+
+Thanks to the last theorem, \( \mathbb{Z}/m\mathbb{Z} \) is equipped with well-defined notions of addition and multiplication.
+
+\textbf{Example:} \( \mathbb{Z}/3\mathbb{Z} = \{0, 1, 2\} \)
+\[
+\begin{aligned}
+    0 + 0 &= 0 \quad & 0 + 1 &= 1 \quad & 0 + 2 &= 2 \\
+    1 + 1 &= 2 \quad & 1 + 2 &= 0 \quad & 2 + 2 &= 1
+\end{aligned}
+\]
+
+\textbf{Exercise:} Write the multiplication table for \( \mathbb{Z}/3\mathbb{Z} \).
+
+Modular arithmetic is like arithmetic on a clock, except that the modulus \( m \) need not be 12, and multiplication is defined.
+
+\textbf{Exercise:} Show that \( \mathbb{Z}/m\mathbb{Z} \), equipped with the operations \( + \) and \( \cdot \), satisfies the field axioms \( (F1), (F2), (F3), (F5) \) if \( m > 1 \).
+
+% Existence of Inverses (Axiom F4)
+\subsection*{\colorbox{yellow}{Existence of Inverses (Axiom F4).}}
+
+\textbf{Exercise:} Prove that for every element \( a \in \mathbb{Z}/m\mathbb{Z} \), the class \( m - a \) is the additive inverse of the class of \( a \).
+
+For the existence of multiplicative inverses, consider \( m = 4 \):
+\[
+\mathbb{Z}/4\mathbb{Z} = \{0, 1, 2, 3\}.
+\]
+Let's examine the element 2:
+\[
+\begin{aligned}
+    2 \cdot 0 &= 0 \\
+    2 \cdot 1 &= 2 \\
+    2 \cdot 2 &= 0 \\
+    2 \cdot 3 &= 2
+\end{aligned}
+\]
+There is no \( x \in \mathbb{Z}/4\mathbb{Z} \) such that \( x \cdot 2 = 1 \). Therefore, \( \mathbb{Z}/4\mathbb{Z} \) fails Axiom (F4) and is not a field.
+
+% Theorem: Field iff Prime
+\subsection*{\colorbox{yellow}{Theorem: Field iff Prime.}}
+
+\( \mathbb{Z}/m\mathbb{Z} \) is a field if and only if \( m \) is a prime number.
+
+\textbf{Proof:} Suppose \( m \) is not a prime number. Then there exist \( r, s \in \mathbb{Z} \) such that \( 0 < r, s < m \) and \( r \cdot s = m \). This implies that \( r \cdot s \equiv 0 \pmod{m} \), but \( r \neq 0 \) and \( s \neq 0 \), so \( \mathbb{Z}/m\mathbb{Z} \) is not a field.
+
+Assume now that \( m \) is prime. We will use the following property of prime numbers: 
+\[
+\text{If } p \mid (x \cdot y) \text{ and } p \text{ is prime}, \text{ then } p \mid x \text{ or } p \mid y.
+\]
+Because \( m \) is prime, this property ensures that \( \mathbb{Z}/m\mathbb{Z} \) contains no zero divisors. Since every non-zero element has a multiplicative inverse, \( \mathbb{Z}/m\mathbb{Z} \) is a field. \(\square\)

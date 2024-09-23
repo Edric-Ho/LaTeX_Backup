@@ -1,0 +1,92 @@
+\section*{Lecture 2: Fields ($\mathbb{F}$) \& Complex Numbers ($\mathbb{C}$) (Sep. $5^{th}$)}
+
+
+\subsection*{\colorbox{yellow}{Fields $\mathbb{F}$}}
+\qquad A field $F$ is a set equipped with two operations: 1. Addition $(+)$ \, 2. Multiplication $(\cdot)$\\
+\qquad These operations satisfy that for each $x, y \in F$, there are unique elements $x + y \in F$ and $x \cdot y \in F$. Moreover, the following conditions hold:
+
+\begin{enumerate}
+    \item \textbf{Fields Axioms:}
+            \begin{enumerate}
+                \item \textbf{Commutativity of addition and multiplication:}
+                    \[ a + b = b + a \quad \text{and} \quad a \cdot b = b \cdot a.\]
+                
+                \item \textbf{Associativity of addition and multiplication:}
+                    \[(a + b) + c = a + (b + c) \quad \text{and} \quad (a \cdot b) \cdot c = a \cdot (b \cdot c).\]
+                
+                \item \textbf{Existence of identity elements:} There exist distinct elements $0$ and $1$ in $\mathbb{F}$ s.t.
+                    \[ 0 + a = a \quad \text{(additive identity)}, \quad 1 \cdot a = a \quad \text{(multiplicative identity)}.\]
+                
+                \item \textbf{Existence of inverses:} $\forall a \in\mathbb{F}$ and each nonzero $b \in \mathbb{F}$, there exist $c, d \in \mathbb{F}$ s.t.
+                    \[a + c = 0 \quad \text{and} \quad b \cdot d = 1.\]
+                
+                \item \textbf{Distributivity:}
+                    \[a \cdot (b + c) = a \cdot b + a \cdot c.\]
+            \end{enumerate}
+
+        \subsubsection*{Examples of Fields}
+            \begin{enumerate}
+                \item $\mathbb{R}$, with usual $+$ and $\cdot$
+                \item $\mathbb{Q}$, with usual $+$ and $\cdot$
+                \item $\mathbb{Q}(\sqrt{5}) = \{x \in \mathbb{R} : x = a + b\sqrt{5} \text{ for } a, b \in \mathbb{Q} \}$
+                \item $F_2 = \{0, 1\}$ with the operations:
+                    \[0 + 0 = 0, \quad 0 + 1 = 1, \quad 1 + 1 = 0,\]
+                    \[0 \cdot 0 = 0, \quad 0 \cdot 1 = 0, \quad 1 \cdot 1 = 1.\]
+            \end{enumerate}
+
+    \item \textbf{Properties of Fields}\\ \\
+        \textbf{Theorem:} Let $F$ be a field and $a, b, c \in F$. Then:
+        \begin{enumerate}
+            \item If $c \neq 0$ and $a \cdot c = b \cdot c$, then $a = b$.
+            \item If $a + c = b + c$, then $a = b$.
+        \end{enumerate}
+
+        \textbf{Proof of (1):} Let $d \in F$ be an element such that $c \cdot d = 1$ (by the existence of inverses, since $c \neq 0$). Then,
+        \[
+            (a \cdot c) \cdot d = (b \cdot c) \cdot d.
+        \]
+        By the associativity of multiplication,
+        \[
+            a \cdot (c \cdot d) = b \cdot (c \cdot d).
+        \]
+        Since $c \cdot d = 1$,
+        \[
+            a \cdot 1 = b \cdot 1.
+        \]
+        By the identity property,
+        \[
+            a = b.
+        \]
+        \textbf{Corollary:} The elements $0$ and $1$ (the identity elements), as well as the elements $c$ and $d$ (the inverses), are unique.
+    \end{enumerate}
+
+\subsection*{\colorbox{yellow}{Complex Numbers $\mathbb{C}$}}
+    \begin{enumerate}
+        \item \textbf{Definition:} The set of complex numbers is
+        \[ \mathbb{C} = \{a + bi : a, b \in \mathbb{R}\}. \]
+        
+        \item \textbf{Operations:}
+        \begin{itemize}
+            \item \textbf{Addition:} $(a + bi) + (c + di) = (a + c) + (b + d)i$.
+            \item \textbf{Multiplication:} $(a + bi) \cdot (c + di) = (ac - bd) + (ad + bc)i$.
+        \end{itemize}
+        
+        \item \textbf{Example:} 
+        \[
+            (2 + i) \cdot (3 - 4i) = (2 \cdot 3 - (1 \cdot -4)) + i(2 \cdot -4 + 1 \cdot 3) = 10 - 5i.
+        \]
+
+        \item \textbf{Remark:} $\mathbb{R}$ is naturally a subset of $\mathbb{C}$, consisting of elements of the form $a + 0i$.
+        
+        \item \textbf{Imaginary numbers:} Numbers of the form $0 + bi$ are called \textbf{imaginary}. The product of two imaginary numbers is real:
+        \[
+            (0 + bi) \cdot (0 + ci) = -bc.
+        \]
+
+        \item \textbf{Complex conjugate:} For $z = a + bi$, the complex conjugate of $z$ is $\overline{z} = a - bi$. The modulus of $z$ is $|z| = \sqrt{a^2 + b^2}$. The inverse of $z$ is given by
+        \[
+            z^{-1} = \frac{\overline{z}}{|z|^2}.
+        \]
+
+        \item \textbf{Conclusion:} The complex numbers $\mathbb{C}$ form a field.
+    \end{enumerate}

@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{amsmath, amssymb, amsthm} 
+\usepackage{xcolor} % For color usage
+\usepackage{geometry}
+\geometry{a4paper, margin=1in, top=1in}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{graphicx}
+\usepackage{bbding}
+\usepackage{hyperref}
+\usepackage{bbding}
+
+% Define the lemma environment
+\theoremstyle{definition}
+\newtheorem{lemma}{Lemma}
+
+\renewcommand{\footnoterule}{
+    \vspace*{1mm} % Space before the rule
+    \hrule width \linewidth height 0.4pt % Rule specification
+    \vspace*{2mm} % Space after the rule
+}
+
+
+\pagestyle{fancy}
+\fancyhead[L]{Edric Ho}
+\fancyfoot[C]{\thepage}
+
+
+\setlength{\droptitle}{-2.5cm} % title position
+\title{MAT240 Lecture Notes}
+\author{Edric Ho}
+\date{24' Fall Semester}
+
+\begin{document}
+
+% course logistics page
+\input{Pages/Logistics/Logistics}
+
+% title
+\maketitle
+
+% lecture pages input
+\input{Pages/Week1/Lec1.tex}\newpage
+\input{Pages/Week1/Lec2.tex}\newpage
+\input{Pages/Week2/Lec3.tex}
+
+\end{document}
